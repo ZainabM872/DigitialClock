@@ -1,0 +1,135 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body{
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #2e2e44;
+}
+
+.clock{
+    position: relative;
+    color: #fff;
+    background: #2d2f41;
+    width: 900px;
+    padding: 100px 40px;
+    box-shadow: 0 5px 25px rgba(14, 21, 37, 0.8);
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.clock::before{
+    content:'';
+    position: absolute;
+    background: linear-gradient(45deg, #24ff6d, #2f93f1, #ff5e9a);
+    background-size: 200% 200%;
+    top: -40px;
+    left: -40px;
+    right: -40px;
+    bottom: -40px;
+    z-index: -1;
+    filter: blur(40px);
+    animation: glowing 10s ease infinite;
+}
+
+@keyframes glowing{
+    0%{
+        background-position: 0 50%;
+    }
+    50%{
+        background-position: 100% 50%;
+    }
+    100%{
+        background-position: 0 50%;
+    }
+}
+
+.time {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hour, .colon, .minutes {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 600;
+    padding: 0 20px;
+    line-height: 170px;
+}
+
+.hour, .minutes {
+    font-size: 13em;
+    width: 250px;
+}
+
+.colon{
+    font-size: 8em;
+    color: #929292;
+}
+
+
+.hour, .colon, .minutes, .AmOrPm, .seconds{
+    background: -webkit-linear-gradient(90deg, #5fd4ff, #634dff);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text; 
+}
+
+.right{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-left: 40px;
+}
+
+.AmOrPm, .seconds{
+    font-size: 4em;
+    font-weight: 500;
+}
+
+/*
+.AmOrPm{
+    transform: translateY(-10px);
+    background: -webkit-linear-gradient(90deg, #f7b63f, #faf879);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text; 
+}
+
+.seconds{
+    transform: translateY(5px);
+    background: -webkit-linear-gradient(90deg, #24ff6d, #2793f1);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text; 
+}
+*/
+.calender{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3em;
+    font-weight: 500;
+    margin-top: 30px;
+    
+}
+
+
+
+
+.month, .day, .year{
+    margin-left: 6px;
+}
+
+
